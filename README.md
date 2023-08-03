@@ -6,10 +6,10 @@ Learn what git is and how to use it.
 
 ### [Syllabus [↗]](Syllabus.md)
 
-- 1. Git Short Intro
-- 2. First things first setup Git
-- 3. Git command practices
-- 4. Git Flow
+1. Git Short Intro
+2. First things first setup Git
+3. Git command practices
+4. Git Flow
 
 ## Usefull links
 

@@ -247,7 +247,7 @@ To resolve merge conflicts with the CLI we need to open the file with the merge 
 
 `git merge feature-branch`
 
-We could use the CLI for this but VS Code has a nice UI for this. We can open the file with the merge conflict in VS Code and resolve the merge conflict with the UI. The UI will display the conflicting changes on that line more or less like this:
+We could use the CLI for this but VS Code has a nice UI. We can open the file with the merge conflict in VS Code and resolve the merge conflict with the UI. The UI will display the conflicting changes on that line more or less like this:
 
 <sup><sub>Accept Current Change | Accept Incoming Change | Accept Both Changes | Compare Changes</sub></sup><br>
 `<<<<<< HEAD`<br>
@@ -256,11 +256,11 @@ new line in the current working branch<br>
 new line in the branch we want to merge<br>
 `>>>>>>` feature-branch
 
-Now we need to decide wich changes we want to keep. If we want to keep the changes from the current working branch, we need to delete the changes from the branch we want to merge. We want for example to keep the changes from the current working branch, so we delete the changes from the branch we want to merge. So click on the button "Accept Current Change". After we resolved all the merge conflicts, we can add the files to the staging area `git add .` and commit the changes `git commit -m "commit message"` and push the changes to the remote repository `git push`.
+Now we need to decide which changes we want to keep. We want for example to keep the changes from the current working branch, so we delete the changes from the branch we want to merge. So click on the button "Accept Current Change". After we resolved all the merge conflicts, we can add the files to the staging area `git add .` and commit the changes `git commit -m "commit message"` and push the changes to the remote repository `git push`.
 
 ## 3.9 git rebase
 
-Git rebase is used to clean up the git history. If we have a lot of commits, we can squash them into one commit. We can also change the order of the commits. We can also use git rebase to merge a branch into another branch.
+Git rebase is used to clean up the git history. If we have a lot of commits, we can squash them into one commit. We can also change the order of the commits. We can also use git rebase to merge a branch into another branch. Be carful with git rebase, because it if we rebase a branch, we change the git history and we can't undo it.
 
 ### 3.9.1 Squash commits
 
