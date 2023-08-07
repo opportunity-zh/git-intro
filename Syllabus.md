@@ -264,10 +264,66 @@ Git rebase is used to clean up the git history. If we have a lot of commits, we 
 
 ### 3.9.1 Squash commits
 
+To keep a clean commit History we can squash commits. For example if we have 10 small commits to fix a bug, we can squash them into one commit, so we have only one for that bigger commit in the git history. That is in a bigger project more readable. To squash commits we use the following command in the branch we want to squash the commits:
+
+`git rebase -i HEAD~10`
+
+The number after the tilde is the number of commits we want to squash. In the example above we squash the last 10 commits. After we run the command, we get a list of the commits we want to squash. We can change the order of the commits and squash them. To squash a commit we change the word "pick" to "squash" or "s". After we changed the commits we want to squash, we save the file and close it. Now we get a new file, where we can write the commit message for the new squashed commit. After we saved the file and closed it, we have squashed the commits.
+
 ## 3.10 git cherrypick
 
-# 4. Git Flow
+Sometimes we want only certain commits from a branch to apply to another branch. Ex. a hotfix branch. We can use the git cherrypick command to apply only certain commits to another branch. To use the git cherrypick command we need the commit hash of the commit we want to apply to another branch.
 
-## Additional Workflow and Pipeline
+We can get the commit hash with the following command:
+
+`git log`
+
+Then we get a list of all commits with the commit hash. We can copy the commit hash of the commit we want to apply to another branch. Then we switch to the branch we want to apply the commit to and use the following command:
+
+`git cherrypick commit-hash`
+
+Now we applied the commit to the current working branch. We can now commit and push the changes to the remote repository.
+
+# 4. Git Flow and other Workflows
+
+Firstly we'll look at the Git Flow concept and then on trunk based development. Trunk based development is a newer concept and is used by bigger companies like Google, Facebook, Amazon etc. We'll also look at other workflows like Github Flow and Gitlab Flow.
+
+## 4.1 Git Flow
+
+What is Git Flow and how can we use it? Git Flow is a branching model / concept to work with git. This method is used in a lot of companies and projects. It's a good practice to use this, because it's a cleaner way to work with git. It's also easier to understand for new developers, because it's a defined workflow.
+
+### Git Flow Branches
+
+Git Flow has a few different types of branches. We have the main branches and the supporting branches. In that we have different type of branches.:
+
+- Main Branches
+  - Master (Production)
+  - Develop (Development/Staging)
+- Supporting Branches
+  - Feature
+  - Release
+  - Hotfix
+
+#### Master Branch
+
+The master branch is the main branch of the project. It's the production branch. The master branch should always be stable and ready to deploy. We should never commit directly to the master branch. We only merge into the master branch from the release or hotfix branch. Sometimes we also merge into the master branch from the develop branch, if we don't have a release branches if the project is small.
+
+#### Develop Branch
+
+The develop branch is the development branch. We merge all feature branches into the develop branch. The develop branch should always be stable and ready to deploy. We should never commit directly to the develop branch. We only merge into the develop branch from the feature, release or hotfix branch.
+
+#### Feature Branch
+
+Here is where all the magic happens. We create a feature branch for every feature we want to implement. Features are changes we want to implement or new features we want to add to the project. We always create a feature branch from the develop branch and merge them only back into the develop branch. We never merge them directly into the master branch.
+
+#### Release Branch
+
+The release branch is used to prepare a new release. They are tested and bugfixed for the "release". We create a release branch from the develop branch, test and tag them. After we tested and tagged them, we merge them into the master branch and the develop branch. We only merge into the master branch from the release branch. We don't alter a version after we tagged it. If we need to fix a bug in the release branch, we create a new bugfix branch from the release branch, fix the bug merge it back into the release branch and tag it with a new version number.
+
+#### Hotfix Branch
+
+The hotfix branch is used to fix bugs in the production. We create a hotfix branch from the master branch, fix the bug and merge them into the master branch and mirror it to the develop branch.
+
+## Additional Workflow and Pipeline$
 
 ### Git Tag and Release
