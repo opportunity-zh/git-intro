@@ -351,7 +351,7 @@ The release branch is used to prepare a new release. They are tested and bugfixe
 
 The hotfix branch is used to fix bugs in the production. We create a hotfix branch from the master branch, fix the bug and merge them into the master branch and mirror it to the develop branch.
 
-## Additional Workflow and Pipelines
+~~## Additional Workflow and Pipelines~~
 
 
-### Git Tag and Release
+~~### Git Tag and Release~~
