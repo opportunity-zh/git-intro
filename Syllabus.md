@@ -292,6 +292,8 @@ Firstly we'll look at the Git Flow concept and then on trunk based development. 
 
 What is Git Flow and how can we use it? Git Flow is a branching model / concept to work with git. This method is used in a lot of companies and projects. It's a good practice to use this, because it's a cleaner way to work with git. It's also easier to understand for new developers, because it's a defined workflow.
 
+![Git Kraken Gitflow Graphic](https://www.gitkraken.com/wp-content/uploads/2021/06/gitflow-diagram-768x973-1.png)
+SRC: Image from Gitkraken
 ### Git Flow Branches
 
 Git Flow has a few different types of branches. We have the main branches and the supporting branches. In that we have different type of branches.:
@@ -324,6 +326,7 @@ The release branch is used to prepare a new release. They are tested and bugfixe
 
 The hotfix branch is used to fix bugs in the production. We create a hotfix branch from the master branch, fix the bug and merge them into the master branch and mirror it to the develop branch.
 
-## Additional Workflow and Pipeline$
+## Additional Workflow and Pipelines
+
 
 ### Git Tag and Release
