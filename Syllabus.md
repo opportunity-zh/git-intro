@@ -351,6 +351,11 @@ The release branch is used to prepare a new release. They are tested and bugfixe
 
 The hotfix branch is used to fix bugs in the production. We create a hotfix branch from the master branch, fix the bug and merge them into the master branch and mirror it to the develop branch.
 
+
+## 4.2 Trunk Based Development
+In trunk based development we only have one main branch (trunk). From this branch we create feature branches to work on and merge them directly back to  main. To successfully work with trunk based development, we tag events like releases, hotfixes etc. with git tags. They are used like an indexes in our git timeline. For this type of workflow we need to have a good automated CI/CD pipeline to test our code before it's pushed to production. Also it's essential to have a good review process, because we don't have a develop branch to test our code beforehand. A lot of big companies like Google, Facebook, Amazon etc. use this type of workflow, because they have a lot of developers and a lot of code to maintain. Also, if it's done right, it's a very fast way to work with git. 
+
+
 ~~## Additional Workflow and Pipelines~~
 
 
