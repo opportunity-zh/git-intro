@@ -27,6 +27,30 @@ _Both organisation have free git reposiotories and tools for developers:_
 ## 2.2 Create a SSH Key to have access to your repository with the CLI
 
 Setup the SSH key, so we can work with our remote git Repository.
+1. Create a new ssh key in your CLI (Terminal): `ssh-keygen`
+
+If you have a existing one, it will ask you to overwrite it. Be carful if you have that ssh key already in use somewhere else, if that is the case, answer with No and.
+
+2. Name your key, the default key name is "id_rsa". This will generate a "id_rsa" file and a id_rsa.pub file. The file without ".pub" ending should never leave or shown to the public. With that key, others can have access to your computer.
+
+3. Now we copy the public key. For that we can use this command to output our public key to the terminal: `cat ~/.ssh/id_rsa.pub`
+
+We need to copy the whole output line starting with "ssh-rsa" or "ssh-ed25519".
+It could look something like this: "ssh-rsa AAAAB3NzaC1yc2EAsadkNot4R3alKey user@host"
+
+4. Now we go to our git provider ex. Github and add the key to our account. 
+
+- Github:
+  - Go to your Github account settings (https://github.com/settings/keys)
+  - Click on "SSH and GPG keys"
+  - Click on "New SSH key"
+    ![Alt text](media/screen-new-ssh-key.png)
+  - Add a title ex. "My Computer"
+  ![Alt text](media/screen-add-ssh-key.png)
+  - Paste the key into the key field
+  - Click on "Add SSH key"
+
+Now we have our ssh key setup and can work with our git repository from the cli (command line interface).
 
 ## 2.3 Git Config
 
@@ -293,6 +317,7 @@ Firstly we'll look at the Git Flow concept and then on trunk based development. 
 What is Git Flow and how can we use it? Git Flow is a branching model / concept to work with git. This method is used in a lot of companies and projects. It's a good practice to use this, because it's a cleaner way to work with git. It's also easier to understand for new developers, because it's a defined workflow.
 
 ![Git Kraken Gitflow Graphic](https://www.gitkraken.com/wp-content/uploads/2021/06/gitflow-diagram-768x973-1.png)
+
 SRC: Image from Gitkraken
 ### Git Flow Branches
 
